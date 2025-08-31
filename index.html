@@ -3,85 +3,143 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Мои лучшие товары</title>
+  <title>Топ товары</title>
+
+  <!-- Подключаем красивый шрифт -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
-      background: #f4f4f9;
+      background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+      color: #333;
     }
+
     header {
       background: #4CAF50;
       color: white;
       text-align: center;
-      padding: 20px;
+      padding: 40px 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
     .container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      padding: 20px;
+      gap: 30px;
+      padding: 40px;
     }
+
     .card {
       background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      overflow: hidden;
+      transform: translateY(50px);
+      opacity: 0;
+      animation: fadeInUp 1s forwards;
+    }
+
+    .card:nth-child(1) { animation-delay: 0.2s; }
+    .card:nth-child(2) { animation-delay: 0.4s; }
+    .card:nth-child(3) { animation-delay: 0.6s; }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-content {
       padding: 20px;
       text-align: center;
     }
-    .card img {
-      width: 100%;
-      border-radius: 8px;
-    }
+
     .card h2 {
-      font-size: 20px;
-      margin: 10px 0;
+      font-size: 1.3rem;
+      margin-bottom: 10px;
     }
+
     .card p {
+      font-size: 0.95rem;
       color: #555;
+      margin-bottom: 20px;
     }
+
     .button {
       display: inline-block;
-      margin-top: 10px;
-      padding: 10px 18px;
+      padding: 12px 24px;
       background: #4CAF50;
       color: white;
       text-decoration: none;
-      border-radius: 8px;
-      font-size: 16px;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: 0.3s ease;
     }
+
     .button:hover {
       background: #45a049;
+      transform: scale(1.05);
+    }
+
+    @keyframes fadeInUp {
+      from {
+        transform: translateY(50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>🔥 Топ товары для тебя 🔥</h1>
-    <p>Выбирай и переходи к покупке</p>
+    <h1>🔥 Топ товары 🔥</h1>
+    <p>Лучшие предложения по моим ссылкам</p>
   </header>
 
   <div class="container">
     <div class="card">
-      <img src="https://via.placeholder.com/300x200" alt="Товар 1">
-      <h2>Товар 1</h2>
-      <p>Короткое описание товара.</p>
-      <a class="button" href="https://partnersite.com/product1?ref=123" target="_blank">Купить</a>
+      <img src="https://picsum.photos/400/200?random=1" alt="Товар 1">
+      <div class="card-content">
+        <h2>Товар 1</h2>
+        <p>Краткое описание товара. Почему он классный и полезный.</p>
+        <a class="button" href="https://partnersite.com/product1?ref=123" target="_blank">Купить</a>
+      </div>
     </div>
 
     <div class="card">
-      <img src="https://via.placeholder.com/300x200" alt="Товар 2">
-      <h2>Товар 2</h2>
-      <p>Короткое описание товара.</p>
-      <a class="button" href="https://partnersite.com/product2?ref=123" target="_blank">Купить</a>
+      <img src="https://picsum.photos/400/200?random=2" alt="Товар 2">
+      <div class="card-content">
+        <h2>Товар 2</h2>
+        <p>Краткое описание товара. Почему стоит выбрать именно его.</p>
+        <a class="button" href="https://partnersite.com/product2?ref=123" target="_blank">Купить</a>
+      </div>
     </div>
 
     <div class="card">
-      <img src="https://via.placeholder.com/300x200" alt="Товар 3">
-      <h2>Товар 3</h2>
-      <p>Короткое описание товара.</p>
-      <a class="button" href="https://partnersite.com/product3?ref=123" target="_blank">Купить</a>
+      <img src="https://picsum.photos/400/200?random=3" alt="Товар 3">
+      <div class="card-content">
+        <h2>Товар 3</h2>
+        <p>Описание товара и выгода для покупателя.</p>
+        <a class="button" href="https://partnersite.com/product3?ref=123" target="_blank">Купить</a>
+      </div>
     </div>
   </div>
 </body>
