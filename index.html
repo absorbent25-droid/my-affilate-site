@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Мои лучшие товары</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f9;
+    }
+    header {
+      background: #4CAF50;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 20px;
+      text-align: center;
+    }
+    .card img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .card h2 {
+      font-size: 20px;
+      margin: 10px 0;
+    }
+    .card p {
+      color: #555;
+    }
+    .button {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 18px;
+      background: #4CAF50;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+    .button:hover {
+      background: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🔥 Топ товары для тебя 🔥</h1>
+    <p>Выбирай и переходи к покупке</p>
+  </header>
+
+  <div class="container">
+    <div class="card">
+      <img src="https://via.placeholder.com/300x200" alt="Товар 1">
+      <h2>Товар 1</h2>
+      <p>Короткое описание товара.</p>
+      <a class="button" href="https://partnersite.com/product1?ref=123" target="_blank">Купить</a>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/300x200" alt="Товар 2">
+      <h2>Товар 2</h2>
+      <p>Короткое описание товара.</p>
+      <a class="button" href="https://partnersite.com/product2?ref=123" target="_blank">Купить</a>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/300x200" alt="Товар 3">
+      <h2>Товар 3</h2>
+      <p>Короткое описание товара.</p>
+      <a class="button" href="https://partnersite.com/product3?ref=123" target="_blank">Купить</a>
+    </div>
+  </div>
+</body>
+</html>
