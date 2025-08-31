@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fuck Mom Anal</title>
+  <title>Топ товары 18+</title>
 
-  <!-- Подключаем красивый шрифт -->
+  <!-- Подключаем шрифт -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
@@ -106,9 +106,60 @@
         opacity: 1;
       }
     }
+
+    /* --- Модальное окно 18+ --- */
+    .modal {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+    .modal-content {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      text-align: center;
+      max-width: 400px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      animation: fadeIn 0.5s ease;
+    }
+    .modal-content h2 { margin-bottom: 10px; }
+    .modal-content p { margin-bottom: 20px; }
+    .modal-content button {
+      padding: 12px 24px;
+      margin: 5px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    #yes-btn { background: #4CAF50; color: white; }
+    #yes-btn:hover { background: #45a049; }
+    #no-btn { background: #f44336; color: white; }
+    #no-btn:hover { background: #e53935; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
   </style>
 </head>
 <body>
+  <!-- Модальное окно -->
+  <div id="age-modal" class="modal">
+    <div class="modal-content">
+      <h2>Возрастное ограничение 18+</h2>
+      <p>Для входа на сайт подтвердите, что вам есть 18 лет.</p>
+      <button id="yes-btn">Да, мне 18+</button>
+      <button id="no-btn">Нет</button>
+    </div>
+  </div>
+
   <header>
     <h1>🔥 Топ товары 🔥</h1>
     <p>Лучшие предложения по моим ссылкам</p>
@@ -116,31 +167,51 @@
 
   <div class="container">
     <div class="card">
-      <img src="https://picsum.photos/400/200?random=1" alt="Товар 1">
+      <img src="images/phone.jpg" alt="Телефон">
       <div class="card-content">
-        <h2>Товар 1</h2>
-        <p>Краткое описание товара. Почему он классный и полезный.</p>
+        <h2>Смартфон</h2>
+        <p>Классный современный телефон.</p>
         <a class="button" href="https://partnersite.com/product1?ref=123" target="_blank">Купить</a>
       </div>
     </div>
 
     <div class="card">
-      <img src="https://picsum.photos/400/200?random=2" alt="Товар 2">
+      <img src="images/shoes.png" alt="Кроссовки">
       <div class="card-content">
-        <h2>Товар 2</h2>
-        <p>Краткое описание товара. Почему стоит выбрать именно его.</p>
+        <h2>Кроссовки</h2>
+        <p>Удобные и стильные для спорта и прогулок.</p>
         <a class="button" href="https://partnersite.com/product2?ref=123" target="_blank">Купить</a>
       </div>
     </div>
 
     <div class="card">
-      <img src="https://picsum.photos/400/200?random=3" alt="Товар 3">
+      <img src="images/watch.jpg" alt="Часы">
       <div class="card-content">
-        <h2>Товар 3</h2>
-        <p>Описание товара и выгода для покупателя.</p>
+        <h2>Умные часы</h2>
+        <p>Следят за здоровьем и уведомлениями.</p>
         <a class="button" href="https://partnersite.com/product3?ref=123" target="_blank">Купить</a>
       </div>
     </div>
   </div>
+
+  <script>
+    const modal = document.getElementById("age-modal");
+    const yesBtn = document.getElementById("yes-btn");
+    const noBtn = document.getElementById("no-btn");
+
+    yesBtn.onclick = () => {
+      modal.style.display = "none";  // Скрываем окно
+      localStorage.setItem("ageConfirmed", "true"); // Запоминаем согласие
+    };
+
+    noBtn.onclick = () => {
+      window.location.href = "https://google.com"; // Уводим на другой сайт
+    };
+
+    // Проверяем, был ли пользователь уже согласен
+    if (localStorage.getItem("ageConfirmed") === "true") {
+      modal.style.display = "none";
+    }
+  </script>
 </body>
 </html>
