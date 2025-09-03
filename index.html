@@ -1,156 +1,18 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <!-- Favicon PNG -->
-<link rel="icon" type="image/png" href="favicon.png" sizes="32x32">
-<link rel="icon" type="image/png" href="favicon.png" sizes="64×64">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FantaN</title>
 
-  <!-- Подключаем шрифт -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png" sizes="64x64">
 
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
-      color: #333;
-    }
+  <!-- Подключаем шрифты -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
-    header {
-      background: #4CAF50;
-      color: white;
-      text-align: center;
-      padding: 40px 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-
-    header p {
-      margin-top: 10px;
-      font-size: 1.2rem;
-      opacity: 0.9;
-    }
-
-    .container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-      padding: 40px;
-    }
-
-    .card {
-      background: white;
-      border-radius: 16px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-      overflow: hidden;
-      transform: translateY(50px);
-      opacity: 0;
-      animation: fadeInUp 1s forwards;
-    }
-
-    .card:nth-child(1) { animation-delay: 0.2s; }
-    .card:nth-child(2) { animation-delay: 0.4s; }
-    .card:nth-child(3) { animation-delay: 0.6s; }
-
-    .card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-
-    .card-content {
-      padding: 20px;
-      text-align: center;
-    }
-
-    .card h2 {
-      font-size: 1.3rem;
-      margin-bottom: 10px;
-    }
-
-    .card p {
-      font-size: 0.95rem;
-      color: #555;
-      margin-bottom: 20px;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 12px 24px;
-      background: #4CAF50;
-      color: white;
-      text-decoration: none;
-      border-radius: 12px;
-      font-size: 1rem;
-      font-weight: 600;
-      transition: 0.3s ease;
-    }
-
-    .button:hover {
-      background: #45a049;
-      transform: scale(1.05);
-    }
-
-    @keyframes fadeInUp {
-      from {
-        transform: translateY(50px);
-        opacity: 0;
-      }
-      to {
-        transform: translateY(0);
-        opacity: 1;
-      }
-    }
-
-    /* --- Модальное окно 18+ --- */
-    .modal {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.8);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-    }
-    .modal-content {
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      text-align: center;
-      max-width: 400px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-      animation: fadeIn 0.5s ease;
-    }
-    .modal-content h2 { margin-bottom: 10px; }
-    .modal-content p { margin-bottom: 20px; }
-    .modal-content button {
-      padding: 12px 24px;
-      margin: 5px;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-    #yes-btn { background: #4CAF50; color: white; }
-    #yes-btn:hover { background: #45a049; }
-    #no-btn { background: #f44336; color: white; }
-    #no-btn:hover { background: #e53935; }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.9); }
-      to { opacity: 1; transform: scale(1); }
-    }
-  </style>
+  <!-- Подключаем внешний CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <!-- Модальное окно -->
@@ -163,32 +25,16 @@
     </div>
   </div>
 
-  <header style="background-color: white; color: black;">
-    <head>
-  <!-- Подключаем классический шрифт -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-  <style>
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 54px;
-      color: #222;
-      text-align: center;
-      letter-spacing: 2px; /* расстояние между буквами */
-      text-transform: uppercase; /* все буквы прописные */
-      margin-top: 40px;
-    }
-  </style>
-</head>
-
-<body>
-  <h1>🔥 NSFW-PORN-AI 🔥</h1>
-</body>
+  <!-- Шапка -->
+  <header>
+    <h1>🔥 NSFW-PORN-AI 🔥</h1>
     <div class="site-title">
-  <img src="images/mi-pics.png" alt="Site Logo" style="width:300px; height:auto;">
-</div>
+      <img src="images/mi-pics.png" alt="Site Logo" class="logo">
+    </div>
     <p>Лучшие предложения по моим ссылкам</p>
   </header>
 
+  <!-- Карточки -->
   <div class="container">
     <div class="card">
       <img src="images/phone.jpg" alt="Телефон">
@@ -218,21 +64,21 @@
     </div>
   </div>
 
+  <!-- JS -->
   <script>
     const modal = document.getElementById("age-modal");
     const yesBtn = document.getElementById("yes-btn");
     const noBtn = document.getElementById("no-btn");
 
     yesBtn.onclick = () => {
-      modal.style.display = "none";  // Скрываем окно
-      localStorage.setItem("ageConfirmed", "true"); // Запоминаем согласие
+      modal.style.display = "none";
+      localStorage.setItem("ageConfirmed", "true");
     };
 
     noBtn.onclick = () => {
-      window.location.href = "https://google.com"; // Уводим на другой сайт
+      window.location.href = "https://google.com";
     };
 
-    // Проверяем, был ли пользователь уже согласен
     if (localStorage.getItem("ageConfirmed") === "true") {
       modal.style.display = "none";
     }
