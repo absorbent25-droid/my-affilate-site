@@ -1,11 +1,13 @@
 /* === Общие стили === */
-body {
+ body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   color: #f0f0f0;
+
+  /* Фон */
   background: url("images/bg-dark.jpg") no-repeat center center fixed;
   background-size: cover;
-  background-attachment: fixed; /* эффект параллакса */
+}/* эффект параллакса */
 }
 
 /* === Шапка === */
