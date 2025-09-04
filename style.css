@@ -5,9 +5,8 @@
   color: #f0f0f0;
 
   /* Фон */
-  background: url("images/bg-dark.jpg") no-repeat center center fixed;
+  background: url("images/bg_dark.jpg") no-repeat center center fixed;
   background-size: cover;
-}/* эффект параллакса */
 }
 
 /* === Шапка === */
