@@ -1,179 +1,171 @@
-/* === Общие стили === */
- body {
+/* Общие стили */
+body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   color: #f0f0f0;
-
-  /* Фон */
-  background: url("images/bg_dark.jpg") no-repeat center center fixed;
-  background-size: cover;
+  background: linear-gradient(-45deg, #0d0d0d, #1a1a1a, #111, #000);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  overflow-x: hidden;
 }
 
-/* === Шапка === */
-header {
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  padding: 80px 20px;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(6px);
-  box-shadow: 0 4px 30px rgba(0,0,0,0.6);
-  border-bottom: 2px solid rgba(255,255,255,0.1);
+  overflow: hidden;
 }
 
-header h1 {
+.hero-bg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 120%;
+  background: url("images/bg_dark.jpg") no-repeat center center;
+  background-size: cover;
+  transform: translateY(0);
+  transition: transform 0.1s linear;
+  z-index: -1;
+  filter: brightness(0.6);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  background: rgba(0,0,0,0.55);
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+}
+
+.neon-text {
   font-family: 'Playfair Display', serif;
-  font-size: 64px;
+  font-size: 3.8rem;
   color: #fff;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  margin: 0 0 20px;
-  text-shadow: 0 0 15px rgba(255,255,255,0.5);
-  animation: glow 2s ease-in-out infinite alternate;
+  text-shadow: 0 0 10px #ff0057, 0 0 20px #ff0057, 0 0 30px #ff7b00, 0 0 40px #ff7b00;
+  animation: neonPulse 2s infinite alternate;
 }
 
-@keyframes glow {
-  from { text-shadow: 0 0 10px #ff0066, 0 0 20px #ff0066; }
-  to   { text-shadow: 0 0 20px #ff99cc, 0 0 40px #ff99cc; }
+@keyframes neonPulse {
+  from { text-shadow: 0 0 10px #ff0057, 0 0 20px #ff0057, 0 0 30px #ff7b00; }
+  to { text-shadow: 0 0 20px #ff0057, 0 0 40px #ff0057, 0 0 60px #ff7b00, 0 0 80px #ff7b00; }
 }
 
-.logo {
-  width: 200px;
-  margin: 20px auto;
-  display: block;
-  filter: drop-shadow(0 0 12px rgba(255,255,255,0.4));
-}
-
-header p {
-  font-size: 20px;
+.hero p {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
   color: #ddd;
-  margin-top: 10px;
 }
 
-/* === Контейнер карточек === */
-.container {
+.btn {
+  display: inline-block;
+  padding: 14px 32px;
+  background: linear-gradient(45deg, #ff0057, #ff7b00);
+  color: white;
+  text-decoration: none;
+  border-radius: 14px;
+  font-weight: 600;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px rgba(255,0,87,0.9);
+}
+
+/* Пульс кнопки */
+.pulse {
+  animation: pulseGlow 2s infinite;
+}
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 0 rgba(255,0,87,0.7); }
+  50% { box-shadow: 0 0 20px rgba(255,0,87,0.9); }
+  100% { box-shadow: 0 0 0 rgba(255,0,87,0.7); }
+}
+
+/* Products */
+.products {
+  padding: 100px 40px;
+  text-align: center;
+  background: rgba(0,0,0,0.85);
+}
+
+.products h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  margin-bottom: 60px;
+  text-shadow: 0 0 10px rgba(255,255,255,0.3);
+}
+
+.card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  padding: 60px 40px;
+  gap: 40px;
 }
 
-/* === Карточки === */
 .card {
-  background: rgba(30,30,30,0.85);
+  background: rgba(255,255,255,0.06);
   border-radius: 20px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
   overflow: hidden;
-  transform: translateY(50px);
+  transition: transform 0.2s ease-out, box-shadow 0.3s ease;
+  will-change: transform;
   opacity: 0;
-  animation: fadeInUp 1s forwards;
+  transform: translateY(40px);
 }
-
-.card:nth-child(1) { animation-delay: 0.2s; }
-.card:nth-child(2) { animation-delay: 0.4s; }
-.card:nth-child(3) { animation-delay: 0.6s; }
+.card:hover {
+  transform: translateY(-12px) scale(1.05);
+  box-shadow: 0 12px 40px rgba(255,0,87,0.6);
+}
 
 .card img {
   width: 100%;
-  height: 220px;
+  height: 240px;
   object-fit: cover;
 }
 
 .card-content {
-  padding: 20px;
-  text-align: center;
+  padding: 25px;
 }
 
-.card h2 {
+.card-content h3 {
   font-size: 1.5rem;
-  color: #fff;
   margin-bottom: 12px;
-}
-
-.card p {
-  font-size: 1rem;
-  color: #bbb;
-  margin-bottom: 20px;
-}
-
-/* === Кнопки === */
-.button {
-  display: inline-block;
-  padding: 14px 28px;
-  background: linear-gradient(135deg, #ff0066, #ff4081);
-  color: white;
-  text-decoration: none;
-  border-radius: 30px;
-  font-size: 1rem;
-  font-weight: 600;
-  box-shadow: 0 6px 15px rgba(255,0,102,0.4);
-  transition: 0.3s ease;
-}
-
-.button:hover {
-  transform: scale(1.08);
-  box-shadow: 0 8px 20px rgba(255,0,102,0.7);
-}
-
-/* === Анимации === */
-@keyframes fadeInUp {
-  from { transform: translateY(50px); opacity: 0; }
-  to   { transform: translateY(0); opacity: 1; }
-}
-
-/* === Модальное окно 18+ === */
-.modal {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.9);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-}
-
-.modal-content {
-  background: rgba(20,20,20,0.95);
-  padding: 30px;
-  border-radius: 16px;
-  text-align: center;
-  max-width: 400px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.7);
-  animation: fadeIn 0.5s ease;
-}
-
-.modal-content h2 {
-  margin-bottom: 10px;
   color: #fff;
 }
-.modal-content p {
-  margin-bottom: 20px;
+
+.card-content p {
+  font-size: 1rem;
+  margin-bottom: 22px;
   color: #ccc;
 }
-.modal-content button {
-  padding: 12px 24px;
-  margin: 5px;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: 0.3s;
-}
-#yes-btn {
-  background: #4CAF50;
-  color: white;
-}
-#yes-btn:hover {
-  background: #45a049;
-}
-#no-btn {
-  background: #f44336;
-  color: white;
-}
-#no-btn:hover {
-  background: #e53935;
+
+/* Footer */
+footer {
+  background: #111;
+  text-align: center;
+  padding: 25px;
+  font-size: 0.95rem;
+  color: #aaa;
+  border-top: 1px solid rgba(255,255,255,0.1);
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.9); }
-  to   { opacity: 1; transform: scale(1); }
+/* Анимации появления */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
 }
